@@ -16,7 +16,7 @@ app = Flask(__name__)
 # =========================
 # CONFIGURATION
 # =========================
-API_KEY = "123456"
+API_KEY = os.getenv("API_KEY")
 DATA_FILE = "data/conversations.json"
 
 # =========================
@@ -73,9 +73,15 @@ def health_check():
 def home():
     return {
         "status": "running",
-        "service": "honeypot API v1",
-        "endpoints": ["/detect", "/health"]
+        "service": "honeypot API",
+        "endpoints": {
+            "health": "GET /health",
+            "send_message": "POST /api/v1/message",
+            "get_conversation": "GET /api/v1/conversation/<conversation_id>",
+            "list_conversations": "GET /api/v1/conversations"
+        }
     }
+
 
 
 @app.route('/api/v1/message', methods=['POST'])
