@@ -73,7 +73,7 @@ def health_check():
 def home():
     return {
         "status": "running",
-        "service": "honeypot API",
+        "service": "honeypot API v1",
         "endpoints": ["/detect", "/health"]
     }
 
