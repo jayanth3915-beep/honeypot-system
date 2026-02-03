@@ -2,6 +2,8 @@
 AI-Powered Agentic Honey-Pot System
 Main API server for detecting and engaging with scammers
 """
+from dotenv import load_dotenv
+load_dotenv()
 
 from flask import Flask, request, jsonify
 import os
