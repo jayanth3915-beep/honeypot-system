@@ -69,6 +69,15 @@ def health_check():
     }), 200
 
 
+@app.route("/", methods=["GET"])
+def home():
+    return {
+        "status": "running",
+        "service": "honeypot API",
+        "endpoints": ["/detect", "/health"]
+    }
+
+
 @app.route('/api/v1/message', methods=['POST'])
 def handle_message():
 
