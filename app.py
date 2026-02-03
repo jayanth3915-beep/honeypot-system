@@ -16,7 +16,7 @@ app = Flask(__name__)
 # =========================
 # CONFIGURATION
 # =========================
-API_KEY = os.getenv("API_KEY")
+API_KEY = "honeypot-2024-kanyarasi"
 DATA_FILE = "data/conversations.json"
 
 # =========================
